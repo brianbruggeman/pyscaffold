@@ -43,7 +43,6 @@
 # USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 # DAMAGE.
 
-from distutils import core
 from distutils import errors
 import logging
 import os
@@ -54,15 +53,17 @@ from setuptools import dist
 
 from pbr import util
 
-
+from distutils import core
 _saved_core_distribution = core.Distribution
 
 
 def _monkeypatch_distribution():
+    from distutils import core
     core.Distribution = dist._get_unpatched(core.Distribution)
 
 
 def _restore_distribution_monkeypatch():
+    from distutils import core
     core.Distribution = _saved_core_distribution
 
 
@@ -135,6 +136,7 @@ def pbr(dist, attr, value):
                     warnings.warn(msg)
 
         # Re-finalize the underlying Distribution
+        from distutils import core
         core.Distribution.finalize_options(dist)
 
         # This bit comes out of distribute/setuptools

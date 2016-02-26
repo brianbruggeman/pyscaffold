@@ -75,7 +75,7 @@ from distutils import log
 from distutils.errors import (DistutilsOptionError, DistutilsModuleError,
                               DistutilsFileError)
 from setuptools.command.egg_info import manifest_maker
-from setuptools.dist import Distribution
+from setuptools import dist as st_dist
 from setuptools.extension import Extension
 
 try:
@@ -282,7 +282,6 @@ def setup_cfg_to_setup_kwargs(config, script_args=()):
     """
 
     kwargs = {}
-
     # Temporarily holds install_requires and extra_requires while we
     # parse env_markers.
     all_requirements = {}
@@ -376,6 +375,7 @@ def setup_cfg_to_setup_kwargs(config, script_args=()):
                 in_cfg_value = data_files
             elif arg == 'cmdclass':
                 cmdclass = {}
+                from setuptools.dist import Distribution
                 dist = Distribution()
                 for cls_name in in_cfg_value:
                     cls = resolve_name(cls_name)
@@ -544,6 +544,7 @@ def get_entry_points(config):
 
 
 def wrap_commands(kwargs):
+    from setuptools.dist import Distribution
     dist = Distribution()
 
     # This should suffice to get the same config values and command classes
