@@ -39,3 +39,10 @@ docs/api/*
 docs/_build/*
 cover/*
 MANIFEST
+
+# Vagrant and Packer
+vagrant/packer/builds
+vagrant/.vagrant
+vagrant/packer/packer-ubuntu-14.04-amd64-virtualbox
+vagrant/packer/packer-*-vmware
+vagrant/packer/packer_cache

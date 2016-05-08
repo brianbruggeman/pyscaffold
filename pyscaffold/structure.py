@@ -11,9 +11,9 @@ from six import string_types
 
 from . import shell, templates, utils
 
-__author__ = "Florian Wilhelm"
-__copyright__ = "Blue Yonder"
-__license__ = "new BSD"
+__author__ = 'Brian Bruggeman'
+__copyright__ = '2016'
+__license__ = 'Apache 2.0'
 
 
 class FileOp(object):
@@ -58,10 +58,8 @@ def make_structure(opts):
     """
     struct = {opts['project']: {
         '.gitignore': templates.gitignore(opts),
-        opts['package']: {'__init__.py': templates.init(opts),
-                          'skeleton.py': templates.skeleton(opts)},
-        'tests': {'conftest.py': templates.conftest_py(opts),
-                  'test_skeleton.py': templates.test_skeleton(opts)},
+        opts['package']: {'__init__.py': templates.init(opts)},
+        'tests': {'conftest.py': templates.conftest_py(opts)},
         'docs': {'conf.py': templates.sphinx_conf(opts),
                  'authors.rst': templates.sphinx_authors(opts),
                  'index.rst': templates.sphinx_index(opts),
@@ -71,13 +69,12 @@ def make_structure(opts):
                  '_static': {
                      '.gitignore': templates.gitignore_empty(opts)}},
         'README.rst': templates.readme(opts),
+        'MANIFEST.in': templates.manifest_in(opts),
         'AUTHORS.rst': templates.authors(opts),
         'LICENSE.txt': templates.license(opts),
         'CHANGES.rst': templates.changes(opts),
         'setup.py': templates.setup_py(opts),
         'setup.cfg': templates.setup_cfg(opts),
-        'requirements.txt': templates.requirements(opts),
-        'test-requirements.txt': templates.test_requirements(opts),
         '.coveragerc': templates.coveragerc(opts)}}
     proj_dir = struct[opts['project']]
     if opts['travis']:

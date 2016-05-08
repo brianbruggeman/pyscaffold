@@ -12,9 +12,9 @@ from six import string_types
 from . import utils
 from . import shell
 
-__author__ = "Florian Wilhelm"
-__copyright__ = "Blue Yonder"
-__license__ = "new BSD"
+__author__ = 'Brian Bruggeman'
+__copyright__ = '2016'
+__license__ = 'Apache 2.0'
 
 
 def git_tree_add(struct, prefix=""):

@@ -20,9 +20,9 @@ from pyscaffold.utils import check_setuptools_version
 from pyscaffold.repo import get_git_root
 from pyscaffold.pytest_runner import PyTest
 
-__author__ = "Florian Wilhelm"
-__copyright__ = "Blue Yonder"
-__license__ = "new BSD"
+__author__ = 'Brian Bruggeman'
+__copyright__ = '2016'
+__license__ = 'Apache 2.0'
 
 
 def version2str(version):

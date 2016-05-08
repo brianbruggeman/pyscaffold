@@ -1,6 +1,14 @@
-import pkg_resources
+# ----------------------------------------------------------------------
+#  Project metadata
+# ----------------------------------------------------------------------
+__versionstr__ = '1.0.0-dev'
+__author__ = '${author}'
+__email__ = '${email}'
+__projname__ = '${project}'
+__shortdoc__ = '${description}'
+__copyright_years__ = '2016'
+__url__ = '${url}'
+__license__ = '${license}'
+__version__ = tuple([int(ver_i.split('-')[0]) for ver_i in __versionstr__.split('.')])
 
-try:
-    __version__ = pkg_resources.get_distribution(__name__).version
-except:
-    __version__ = 'unknown'
+locals()['__doc__'] = __shortdoc__

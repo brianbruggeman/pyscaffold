@@ -26,9 +26,9 @@ from pyscaffold.cli import main as putup
 from pyscaffold.shell import git
 from pyscaffold.utils import chdir
 
-__author__ = "Florian Wilhelm"
-__copyright__ = "Blue Yonder"
-__license__ = "new BSD"
+__author__ = 'Brian Bruggeman'
+__copyright__ = '2016'
+__license__ = 'Apache 2.0'
 
 __location__ = os.path.join(os.getcwd(), os.path.dirname(
     inspect.getfile(inspect.currentframe())))

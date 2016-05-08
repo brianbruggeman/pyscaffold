@@ -12,9 +12,9 @@ from pyscaffold import integration
 from setuptools_scm.version import ScmVersion
 import pytest
 
-__author__ = "Florian Wilhelm"
-__copyright__ = "Blue Yonder"
-__license__ = "new BSD"
+__author__ = 'Brian Bruggeman'
+__copyright__ = '2016'
+__license__ = 'Apache 2.0'
 
 
 def test_version2str():

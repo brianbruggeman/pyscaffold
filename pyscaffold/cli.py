@@ -13,9 +13,9 @@ import pyscaffold
 
 from . import info, repo, shell, structure, templates, utils
 
-__author__ = "Florian Wilhelm"
-__copyright__ = "Blue Yonder"
-__license__ = "new BSD"
+__author__ = 'Brian Bruggeman'
+__copyright__ = '2016'
+__license__ = 'Apache 2.0'
 
 
 def parse_args(args):
@@ -60,7 +60,7 @@ def parse_args(args):
         dest="license",
         choices=license_choices,
         required=False,
-        default="none",
+        default="apache",
         help="package license from {choices} (default: {default})".format(
             choices=str(license_choices), default="No license"),
         metavar="LICENSE")
@@ -158,17 +158,22 @@ def get_default_opts(project_name, **aux_opts):
     opts.setdefault('release_date', date.today().strftime('%Y-%m-%d'))
     opts.setdefault('year', date.today().year)
     opts.setdefault('license', 'none')
-    opts.setdefault('description', 'Add a short description here!')
-    opts.setdefault('url', 'http://...')
+    opts.setdefault('description', 'TODO: Add a short description')
+    opts.setdefault('url', 'TODO: Add URL to this package')
     opts.setdefault('version', pyscaffold.__version__)
     opts.setdefault('title',
                     '='*len(opts['project']) + '\n' + opts['project'] + '\n' +
                     '='*len(opts['project']))
-    classifiers = ['Development Status :: 4 - Beta',
-                   'Programming Language :: Python']
-    opts.setdefault('classifiers', utils.list2str(
-        classifiers, indent=4, brackets=False, quotes=False, sep=''))
-    opts.setdefault('url', 'http://...')
+    classifiers = [
+        'Natural Language :: English',
+        'Development Status :: 4 - Beta',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: Implementation :: PyPy',
+    ]
+    opts.setdefault('classifiers', classifiers)
     # Initialize empty list of all requirements
     opts.setdefault('requirements', list())
     opts['namespace'] = utils.prepare_namespace(opts['namespace'])

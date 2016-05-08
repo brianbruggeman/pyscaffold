@@ -11,9 +11,9 @@ from pkgutil import get_data
 
 import demoapp_data
 
-__author__ = "Florian Wilhelm"
-__copyright__ = "Blue Yonder"
-__license__ = "new BSD"
+__author__ = 'Brian Bruggeman'
+__copyright__ = '2016'
+__license__ = 'Apache 2.0'
 
 
 def get_hello_world():

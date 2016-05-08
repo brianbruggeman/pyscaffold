@@ -7,9 +7,9 @@ import sys
 import pytest
 from pyscaffold import cli
 
-__author__ = "Florian Wilhelm"
-__copyright__ = "Blue Yonder"
-__license__ = "new BSD"
+__author__ = 'Brian Bruggeman'
+__copyright__ = '2016'
+__license__ = 'Apache 2.0'
 
 
 def test_parse_args():

@@ -7,11 +7,46 @@ ${description}
 Description
 ===========
 
-A LONGER DESCRIPTION OF YOUR PROJECT GOES HERE...
 
 
-Note
-====
+Motivation
+==========
 
-This project has been set up using PyScaffold ${version}. For details and usage
-information on PyScaffold see http://pyscaffold.readthedocs.org/.
+
+Installation
+============
+
+
+Example Usages
+==============
+
+
+Contributions
+=============
+
+Contributions are welcome.  Please use the following guidelines:
+
+* Before implementing, please open an issue for discussion.
+* Please add tests for the new features/logic or update tests where appropriate.
+* Update add major changes to the `CHANGES.rst` file
+* Make sure your code passes our coding style:  `flake8`
+* Add yourself to contributors at `AUTHORS.rst`.
+
+
+License
+=======
+
+${license}
+
+.. literalinclude:: LICENSE.rst
+
+
+Contributors
+============
+
+.. literalinclude:: AUTHORS.rst
+
+Changes
+=======
+
+.. literalinclude:: CHANGES.rst

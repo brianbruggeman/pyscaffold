@@ -1,25 +1,38 @@
-# Tox configuration file
-# Read more under https://tox.readthedocs.org/
-# THIS SCRIPT IS SUPPOSED TO BE AN EXAMPLE. MODIFY IT ACCORDING TO YOUR NEEDS!
-
 [tox]
-minversion = 1.8
-envlist = py27,py33,py34,flake8
+envlist = py{27,35,py}-{smoke,unit,requirements,coverage,license}, style, docs
+skipsdist = True
 skip_missing_interpreters = True
+sitepackages = False
+
 
 [testenv]
-changedir = tests
+sitepackages = False
+recreate = True
 commands =
-    py.test {posargs}
+    {envpython} -m pip install -q .[tests]
+    {envpython} -m pip install -q .
+    py{27,35,py}-smoke: {envpython} -m pytest -m smoke --cov=${project} {posargs}
+    py{27,35,py}-unit: {envpython} -m pytest -m unit --cov=${project} {posargs}
+    py{27,35,py}-coverage: {envpython} -m pytest --cov=${project} {posargs}
+    py{27,35,py}-requirements: {envpython} -m pytest {posargs}
+    py{27,35,py}-license: {envpython} -m pytest -m license {posargs}
 deps =
-    pytest
-    -r{toxinidir}/requirements.txt
+    py{27,35,py}-requirements: -r{toxinidir}/requirements.txt
 
-[testenv:flake8]
-changedir = {toxinidir}
-deps = flake8
-commands = flake8 setup.py ${package} tests
 
-# Options for pytest
-[pytest]
-addopts = -rsxXf
+[testenv:style]
+sitepackages = False
+recreate = True
+commands =
+    {envpython} -m pip install -q .[tests]
+    {envpython} -m pip install -q .
+    py.test -q --flake8 ${project}/ {posargs}
+
+
+[testenv:docs]
+sitepackages = False
+recreate = True
+commands =
+    {envpython} -m pip install -q .[docs]
+    {envpython} -m pip install -q .
+    sphinx-build [] -W -b html -d {envtmpdir}/doctrees . {envtmpdir}/html {posargs}

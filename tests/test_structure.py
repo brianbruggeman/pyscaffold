@@ -7,9 +7,9 @@ import pytest
 import six
 from pyscaffold import cli, structure, utils, info
 
-__author__ = "Florian Wilhelm"
-__copyright__ = "Blue Yonder"
-__license__ = "new BSD"
+__author__ = 'Brian Bruggeman'
+__copyright__ = '2016'
+__license__ = 'Apache 2.0'
 
 
 def test_create_structure(tmpdir):  # noqa
