@@ -39,7 +39,7 @@ Vagrant.configure(2) do |config|
     # Do provisioning here
     # ${package}.vm.provision "ansible" do |ansible|
     #   # ansible.verbose = ""
-    #   ansible.playbook = "ansible/{package}.yml"
+    #   ansible.playbook = "ansible/${package}.yml"
     # end
     # ${package}.vm.provision :shell, path: "bootstrap_${package}.sh", privileged: false
 
