@@ -86,6 +86,8 @@ def make_structure(opts):
         proj_dir['tox.ini'] = templates.tox(opts)
     if opts['vagrant']:
         proj_dir.setdefault('vagrant', {})['Vagrantfile'] = templates.vagrant(opts)
+    if opts['docker']:
+        proj_dir.setdefault('docker', {})['Dockerfile'] = templates.docker(opts)
     if opts['update'] and not opts['force']:
         # Do not overwrite following files
         rules = {opts['project']: {

@@ -123,6 +123,12 @@ def parse_args(args):
         default="",
         help="generate vagrant folder (e.g. debian/jessie64)",
         metavar="DISTRO/VERSION")
+    parser.add_argument(
+        "--with-docker",
+        dest="docker",
+        action="store_true",
+        default=False,
+        help="generate docker folder")
 
     version = pyscaffold.__version__
     parser.add_argument('-v',

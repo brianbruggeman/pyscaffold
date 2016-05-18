@@ -1,0 +1,11 @@
+# A basic sample dockerfile
+FROM debian:jessie
+
+MAINTAINER ${author} <${email}>
+
+# Setup Debian
+RUN apt-get update
+
+# Install packages
+RUN apt-get install -y ansible
+

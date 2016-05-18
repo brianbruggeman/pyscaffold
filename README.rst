@@ -147,6 +147,13 @@ with a vagrant build as specified by the flag ``--with-vagrant`` which
 is equivalent to running ``cd vagrant && vagrant init my_vagrant_box``.
 
 
+Docker
+======
+
+Creates a `Docker <https://www.docker.com>`_ folder within the project
+with a Dockerfile as specified by the flag ``--with-docker``.
+
+
 Easy Updating
 =============
 

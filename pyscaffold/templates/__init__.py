@@ -307,3 +307,14 @@ def vagrant(opts):
     '''
     template = get_template('vagrant')
     return template.substitute(opts)
+
+
+def docker(opts):
+    '''
+    Template of docker
+
+    :param opts: mapping parameters as a dictionary
+    :return: file content as string
+    '''
+    template = get_template('docker')
+    return template.substitute(opts)

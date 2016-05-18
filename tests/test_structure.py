@@ -120,6 +120,19 @@ def test_make_structure_without_vagrant():
     assert "vagrant" not in struct["project"]
 
 
+def test_make_structure_with_docker():
+    args = ["project",
+            "-p", "package",
+            "-d", "description",
+            "--with-docker", "test_instance"]
+    opts = cli.parse_args(args)
+    opts = cli.get_default_opts(opts['project'], **opts)
+    struct = structure.make_structure(opts)
+    assert isinstance(struct, dict)
+    assert "Dockerfile" in struct["project"]["docker"]
+    assert isinstance(struct["project"]["docker"]["Dockerfile"], six.string_types)
+
+
 def test_apply_update_rules(tmpdir):  # noqa
     NO_OVERWRITE = structure.FileOp.NO_OVERWRITE
     NO_CREATE = structure.FileOp.NO_CREATE
